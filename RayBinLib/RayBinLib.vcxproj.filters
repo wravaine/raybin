@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Libs\enkiTS\TaskScheduler.cpp">
+      <Filter>Libs\enkiTS</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\enkiTS\TaskScheduler_c.cpp">
+      <Filter>Libs\enkiTS</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="RayTracer.cpp" />
+    <ClCompile Include="RenderTarget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Libs\enkiTS\Atomics.h">
+      <Filter>Libs\enkiTS</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\enkiTS\LockLessMultiReadPipe.h">
+      <Filter>Libs\enkiTS</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\enkiTS\TaskScheduler.h">
+      <Filter>Libs\enkiTS</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\enkiTS\TaskScheduler_c.h">
+      <Filter>Libs\enkiTS</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\enkiTS\Threads.h">
+      <Filter>Libs\enkiTS</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\stb\stb_image.h">
+      <Filter>Libs\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs\stb\stb_image_write.h">
+      <Filter>Libs\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="RayTracer.h" />
+    <ClInclude Include="HitResult.h" />
+    <ClInclude Include="RenderTarget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{7657e913-33b9-4794-8cc2-e87c1a7b36d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\enkiTS">
+      <UniqueIdentifier>{e4716a2f-e8a9-4ada-969c-32d5162a6e94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\stb">
+      <UniqueIdentifier>{f015b8fb-8e2d-4dbe-ac60-7a324708e63d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
