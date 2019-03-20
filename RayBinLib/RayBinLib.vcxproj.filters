@@ -14,6 +14,8 @@
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="RayTracer.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libs\enkiTS\Atomics.h">
@@ -45,6 +47,8 @@
     <ClInclude Include="RayTracer.h" />
     <ClInclude Include="HitResult.h" />
     <ClInclude Include="RenderTarget.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Sphere.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Libs">
