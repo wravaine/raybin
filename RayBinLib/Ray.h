@@ -4,7 +4,7 @@
 
 struct Ray
 {
-	Ray() {}
+	Ray() = default;
 	Ray(const Vec3& orig_, const Vec3& dir_) : origin(orig_), dir(dir_) { /* AssertUnit(dir); */ }
 
 	Vec3 GetPointAt(float t) const { return origin + dir * t; }

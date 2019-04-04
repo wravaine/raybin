@@ -1,14 +1,13 @@
 #pragma once
 
 #include "Math.h"
+#include <vector>
 #include <string>
 
 class Texture
 {
 public:
-	Texture();
-	virtual ~Texture();
-
+	virtual ~Texture() = default;
 	virtual Vec3 Sample(float u, float v) const = 0;
 };
 
@@ -27,14 +26,14 @@ public:
 };
 
 // Texture data loaded from file
-class FileTexture : Texture
+class ImageTexture : Texture
 {
-	FileTexture() {}
-	FileTexture(const std::string& filename);
-	virtual ~FileTexture();
+	ImageTexture() = default;
+	ImageTexture(const std::string& filename);
+	virtual ~ImageTexture();
 
 	bool Load(const std::string& filename);
-	bool IsLoaded() const { return data != nullptr; }
+	bool IsLoaded() const { return data.size() > 0; }
 
 	// Inherited via Texture
 	virtual Vec3 Sample(float u, float v) const override;
@@ -43,8 +42,8 @@ private:
 
 	void Unload();
 
-	std::string filename;
-	Vec3* data = nullptr;
+	std::vector<Vec3> data;
 	int width = 0;
 	int height = 0;
+	std::string filename;	
 };

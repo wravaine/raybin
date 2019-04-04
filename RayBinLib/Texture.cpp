@@ -1,31 +1,23 @@
 #include "Texture.h"
 
-#define STB_IMAGE_IMPLEMENTATION
+//#define STB_IMAGE_IMPLEMENTATION
 #include "Libs/stb/stb_image.h"
-
-Texture::Texture()
-{
-}
-
-Texture::~Texture()
-{
-}
 
 //////////////////////////////////////////////////////////////////
 
-FileTexture::FileTexture(const std::string & filename)
+ImageTexture::ImageTexture(const std::string & filename)
 {
 	this->filename = filename;
 
 	Load(this->filename);
 }
 
-FileTexture::~FileTexture()
+ImageTexture::~ImageTexture()
 {
 	Unload();
 }
 
-bool FileTexture::Load(const std::string & filename)
+bool ImageTexture::Load(const std::string & filename)
 {
 	int channels = 0;
 	int w, h;
@@ -40,16 +32,18 @@ bool FileTexture::Load(const std::string & filename)
 		this->filename = filename;
 		this->width = w;
 		this->height = h;
-		this->data = new Vec3[w * h];
+		this->data.resize(w * h);
 
-		int imgSize = w * h * channels;
-		Vec3* p = data;
-		
-		for(int i = 0; i < imgSize; i += channels, ++p)
 		{
-			p->x = float(fileData[i+0] / 256.0f);
-			p->y = float(fileData[i+1] / 256.0f);
-			p->z = float(fileData[i+2] / 256.0f);
+			int i = 0;
+
+			for(auto& p : data)
+			{
+				p.x = float(fileData[i + 0] / 256.0f);
+				p.y = float(fileData[i + 1] / 256.0f);
+				p.z = float(fileData[i + 2] / 256.0f);
+				i += channels;
+			}
 		}
 	}
 	
@@ -57,16 +51,12 @@ bool FileTexture::Load(const std::string & filename)
 	return false;
 }
 
-Vec3 FileTexture::Sample(float u, float v) const
+Vec3 ImageTexture::Sample(float u, float v) const
 {
 	return Vec3();
 }
 
-void FileTexture::Unload()
+void ImageTexture::Unload()
 {
-	if(data)
-	{
-		delete[] data;
-		data = nullptr;
-	}
+	data.empty();
 }
